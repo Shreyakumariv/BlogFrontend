@@ -6,7 +6,7 @@ const Blog = () => {
   const [blog, setBlog] = useState();
   const sendRequest = async () => {
 
-    await axios.get("http://localhost:7000/api/blog").then((res) => {
+    await axios.get("https://bookbackend-jgyt.onrender.com/api/blog").then((res) => {
       setBlog(res.data.blogs)
     })
 

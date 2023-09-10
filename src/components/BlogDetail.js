@@ -21,7 +21,7 @@ const BlogDetail = () => {
     }));
   };
   const fetchDetails = async () => {
-    const res = await axios.get(`http://localhost:7000/api/blog/${id}`)
+    const res = await axios.get(`https://bookbackend-jgyt.onrender.com/api/blog/${id}`)
       .catch(err => console.log(err))
     const data = await res.data;
     return data;
@@ -39,7 +39,7 @@ const BlogDetail = () => {
   }, [id])
 
   const sendRequest = async () => {
-    const res = await axios.put(`http://localhost:7000/api/blog/update/${id}`, {
+    const res = await axios.put(`https://bookbackend-jgyt.onrender.com/api/blog/update/${id}`, {
       title: inputs.title,
       description: inputs.description
     }).catch(err => console.log(err))

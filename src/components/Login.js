@@ -21,7 +21,7 @@ const Login = () => {
     }))
   };
   const sendRequest = async (type = "login") => {
-    const res = await axios.post(`http://localhost:7000/api/user/${type}`, {
+    const res = await axios.post(`https://bookbackend-jgyt.onrender.com/api/user/${type}`, {
       "name": Inputs.name,
       "email": Inputs.email,
       "password": Inputs.password,

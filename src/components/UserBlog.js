@@ -7,7 +7,7 @@ const UserBlog = () => {
   const id = localStorage.getItem("userId");
   const sendRequest = async () => {
     // console.log(id)
-    await axios.post(`http://localhost:7000/api/blog/user`, { id }).then((res) => {
+    await axios.post(`https://bookbackend-jgyt.onrender.com/api/blog/user`, { id }).then((res) => {
       setBlog(res.data.user.blogs)
     })
   }
