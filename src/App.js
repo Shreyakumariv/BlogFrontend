@@ -1,24 +1,32 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Header from './components/Header';
+import React from 'react';
+import Login from './components/Login';
+import AddBlog from './components/AddBlog'
+import Blog from './components/Blog'
+import UserBlog from './components/UserBlog'
+import BlogDetail from './components/BlogDetail'
+import { useSelector } from 'react-redux';
 
 function App() {
+  const isLoggedIn = useSelector(state => state.isLoggedIn);
+  console.log(isLoggedIn);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <React.Fragment>
+      <header>
+        <Header />
       </header>
-    </div>
+      <main>
+        <Routes>
+          <Route path='/Login' element={<Login />} />
+          <Route path='/' element={<Blog />} />
+          <Route path='/AddBlog/add' element={<AddBlog />} />
+          <Route path='/UserBlog' element={<UserBlog />} />
+          <Route path='/myBlog/:id' element={<BlogDetail />} />
+        </Routes>
+      </main>
+    </React.Fragment>
   );
 }
 
