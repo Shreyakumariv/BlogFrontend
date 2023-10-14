@@ -54,7 +54,9 @@ const BlogDetail = () => {
     <div>
       <form onSubmit={handleSubmit}>
         <Box
-          border={3} borderColor={green} borderRadius={10} boxShadow={"10px 10px 20px #ccc"} padding={3} margin={"auto"} marginTop={3} display={'flex'} flexDirection={'column'} width={'80%'} >
+          border={3} borderColor={green} borderRadius={10}
+           boxShadow={"10px 10px 20px #ccc"} padding={3} margin={"auto"} 
+           marginTop={3} display={'flex'} flexDirection={'column'} maxWidth={'80%'} >
           <Typography fontWeight={'bold'} padding={3} color={'gray'} variant='h2' textAlign={'center'}>Post your Blog</Typography>
           <InputLabel sx={labelStyles}>Title</InputLabel>
           <TextField name='title' onChange={handleChange} value={inputs.title} margin="normal" variant='outlined' />

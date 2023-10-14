@@ -10,9 +10,9 @@ const LoginSlice = createSlice({
         logout(state) {
             state.isLoggedIn = false
         },
-
     }
 })
+
 export const loginActions = LoginSlice.actions
 export const Store = configureStore({
     reducer: LoginSlice.reducer
